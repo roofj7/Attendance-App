@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Attendance Excel</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            width: 380px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Upload Student Excel</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label>Excel File</label>
+        <input type="file" name="excel" accept=".xlsx" required>
+ <div class="helper-text">
+            Please upload a <b>.xlsx</b> file that contains the columns
+            <b>Register Number</b> (or Roll Number) and <b>Name</b>.
+            Other columns like Department, Year, or Section are allowed.
+        </div>
+        <label>Number of Sessions</label>
+        <select name="sessions">
+            <option value="2">2 Sessions</option>
+            <option value="4">4 Sessions</option>
+        </select>
+
+        <button type="submit">Next</button>
+    </form>
+</div>
+
+</body>
+</html>
